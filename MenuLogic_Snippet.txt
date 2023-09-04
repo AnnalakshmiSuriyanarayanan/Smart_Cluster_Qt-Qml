@@ -1,0 +1,33 @@
+{
+        imx_BtnEvntdata = getImx_BtnEvnt();
+        qInfo() << "IMX_ButtonEvent:" <<imx_BtnEvntdata;
+        
+        if ( imx_BtnEvntdata == 0 )
+        {
+            imx_toggleBtn == 0;        }
+        else if ( imx_BtnEvntdata == 1 )
+        {
+            imx_rightLeftdata++;
+            imx_toggleBtn == 0;
+        }
+        else if ( imx_BtnEvntdata == 2 )
+        {
+            imx_rightLeftdata--;
+            imx_toggleBtn == 0;
+        }
+        else if ( imx_BtnEvntdata == 3 )
+        {
+            imx_updowndata--;
+            imx_toggleBtn == 0;
+        }
+        else if ( imx_BtnEvntdata == 4 )
+        {
+            imx_rightLeftdata++;
+            imx_toggleBtn == 0;
+        }
+        else if ( imx_BtnEvntdata == 5 )
+        {
+            imx_toggleBtn == 1;
+        }
+        emit imx_btnEvnt(imx_toggleBtn, imx_rightLeftdata, imx_updowndata);
+    }
