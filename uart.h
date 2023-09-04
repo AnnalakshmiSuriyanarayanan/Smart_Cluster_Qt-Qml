@@ -20,6 +20,37 @@ class UART : public QObject
     Q_OBJECT
 public:
 
+enum Waring_Signs : quint8 {
+        NoWarnings = 0,
+        BootOpen,
+        BonnetOpen,
+        FogLightFrontON,
+        PowerSteeringFailure,
+        BrakePadFailure,
+        CruiseControlON,
+        KeyNotinVehicle,
+        HighBeamON,
+        TyrePressureLowFrontLeft,
+        TyrePressureLowFrontRight,
+        TyrePressureLowRearLeft,
+        TyrePressureLowRearRight,
+        ExteriorLightFault,
+        WearSeatBeltDriver,
+        WearSeatBeltPassenger,
+        ServiceDue,
+        AirbagFailure,
+        DoorOpenDriver,
+        DoorOpenPassenger,
+        DoorOpenRearLeft,
+        DoorOpenRearRight,
+    };
+	
+    Q_ENUM(Waring_Signs)
+	
+	static void  declareQML()	{
+        qmlRegisterType<UART>("com.MyQMLEnums.uart", 1, 0, "Warnings");
+	}
+
     explicit UART(QObject *parent = nullptr);
     QSerialPort *getImx_serial() const;
     void setImx_serial(QSerialPort *newImx_serial);

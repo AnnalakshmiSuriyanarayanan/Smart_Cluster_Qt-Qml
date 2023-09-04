@@ -3,7 +3,6 @@
 #include <QQmlApplicationEngine>
 #include <uart.h>
 
-
 int main(int argc, char *argv[])
 {
     qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
@@ -16,7 +15,7 @@ int main(int argc, char *argv[])
         QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
     }
-    QGuiApplication app(argc, argv);
+    QGuiApplication app(argc, argv);	
 
     qmlRegisterType<UART>("com.pets.uart",1,0,"Uart");
 
@@ -30,6 +29,9 @@ int main(int argc, char *argv[])
     engine.load(url);
 
     UART newUart;
+    newUart.declareQML();
+
+    qmlRegisterType<UART>("com.MyQMLEnums.uart", 1, 0, "Warnings");
 
 
     return app.exec();

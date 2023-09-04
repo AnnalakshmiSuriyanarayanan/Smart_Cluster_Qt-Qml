@@ -134,5 +134,26 @@
         <file>fonts/Overpass-SemiBoldItalic.ttf</file>
         <file>Logo.qml</file>
         <file>PopUps.qml</file>
+        <file>images/GSO_Warnings_3.png</file>
+        <file>images/GSO_Warnings_4.png</file>
+        <file>images/GSO_Warnings_5.png</file>
+        <file>images/GSO_Warnings_6.png</file>
+        <file>images/GSO_Warnings_7.png</file>
+        <file>images/GSO_Warnings_8.png</file>
+        <file>images/GSO_Warnings_9.png</file>
+        <file>images/GSO_Warnings_10.png</file>
+        <file>images/GSO_Warnings_11.png</file>
+        <file>images/GSO_Warnings_12.png</file>
+        <file>images/GSO_Warnings_13.png</file>
+        <file>images/GSO_Warnings_14.png</file>
+        <file>images/GSO_Warnings_15.png</file>
+        <file>images/GSO_Warnings_16.png</file>
+        <file>images/GSO_Warnings_17.png</file>
+        <file>images/GSO_Warnings_18.png</file>
+        <file>images/GSO_Warnings_19.png</file>
+        <file>images/GSO_Warnings_20.png</file>
+        <file>images/GSO_Warnings_2.png</file>
+        <file>images/GSO_Warnings_0.png</file>
+        <file>images/GSO_Warnings_1.png</file>
     </qresource>
 </RCC>

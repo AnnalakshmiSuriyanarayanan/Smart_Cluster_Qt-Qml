@@ -23,14 +23,14 @@ Row
         spacing: window.width / 40
         Row {
             spacing: window.width / 40
-            Warnings{}
-            RideMode{}
+            RideMode{opacity: 0}
         }
         Row {
             anchors.verticalCenter: parent.verticalCenter
             topPadding: 50
             spacing: window.width / 40
             Speedometer{ x: -250 }
+            Warnings{opacity:1}
             VehicleBattery{}
         }
     }

@@ -9,7 +9,7 @@ import com.pets.uart 1.0
 
 Rectangle
 {
-    anchors.top: parent.top
+   // anchors.top: parent.top
     visible: true
     width: window.width/4.75
     height: window.height/14

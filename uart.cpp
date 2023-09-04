@@ -13,12 +13,12 @@ bool imx_highbeamData;
 bool imx_lowbeamData;
 bool imx_parkingalertData;
 
-quint8 imx_teltaleData;
-quint8 imx_speedData;
-quint8 imx_batteryData;
-quint8 imx_tripAbatterydata;
-quint8 imx_tripBbatterydata;
-quint32 imx_odoData;
+quint8 imx_teltaleData =0;
+quint8 imx_speedData = 0;
+quint8 imx_batteryData=100;
+quint8 imx_tripAbatterydata=0;
+quint8 imx_tripBbatterydata=0;
+quint32 imx_odoData=0;
 quint8 imx_frontTPMSData;
 quint8 imx_rearTPMSData;
 quint16 imx_restRangeData;
@@ -34,8 +34,8 @@ UART::UART(QObject *parent) : QObject{parent}, imx_serial(new QSerialPort(this))
     imx_timer(new QTimer(this))  //  Constructor
 {
     //  ---- [SCPETS_1]
-    imx_serial->setPortName("COM1");      // Set_Comm Ports for Console
-    //    imx_serial->setPortName("ttymxc0");   // Set Comm Ports for Target
+    //imx_serial->setPortName("COM1");      // Set_Comm Ports for Console
+    imx_serial->setPortName("ttymxc0");   // Set Comm Ports for Target
     imx_serial->open(QIODevice::ReadWrite); // Device Open Mode
     imx_serial->setBaudRate(QSerialPort::Baud9600); // Device Baudrate
     imx_serial->setDataBits(QSerialPort::Data8);    // Device Data Bits
@@ -68,8 +68,7 @@ void UART::readData() // Private Slot
     {
         QByteArray message = buffer.mid(0,index);
         buffer.remove(0,index+1);
-        qInfo() << message[0
-                ]<< "\t"<< message[1]<< "\t"<< message[2]<< "\t";
+        qInfo() << message[0]<< "\t"<< message[1]<< "\t"<< message[2]<< "\t";
 
         // ---- [UART_TX[0] TellTaleData
         imx_teltaleData = message[0];
@@ -143,70 +142,6 @@ void UART::connections() // public slot
     {
         imx_teltaleData = getImx_teltaleData();
 
-        // ---- [UART_TX[0] bit 0] RideModeData ----
-        {
-            if((imx_teltaleData & 0x80 ) != 0)
-            {
-                imx_ridemodeData = true; }   else    {
-                imx_ridemodeData = false;
-            }
-        }
-        // ---- [UART_TX[0] bit 1]WarningLowBattery ----
-        {
-            if((imx_teltaleData & 0x40 ) != 0)
-            {
-                imx_warningLowbatteryData = true;   }   else        {
-                imx_warningLowbatteryData = false;
-            }
-        }
-        // ---- [UART_TX[0] bit 2]WarningSideStand ----
-        {
-            if((imx_teltaleData & 0x20 ) != 0)
-            {
-                imx_warningSidestandData = true; }   else    {
-                imx_warningSidestandData = false;
-            }
-        }
-        // ---- [UART_TX[0] bit 3]RightIndicator ----
-        {
-            if((imx_teltaleData & 0x10 ) != 0)
-            {
-                imx_rightIndicatorData = true; }   else    {
-                imx_rightIndicatorData = false;
-            }
-        }
-        // ---- [UART_TX[0] bit 4]LeftIndicator ----
-        {
-            if((imx_teltaleData & 0x08 ) != 0)
-            {
-                imx_leftIndicatorData = true;   }   else    {
-                imx_leftIndicatorData = false;
-            }
-        }
-        // ---- [UART_TX[0] bit 5]HighBeam ----
-        {
-            if((imx_teltaleData & 0x04 ) != 0)
-            {
-                imx_highbeamData = true; }   else    {
-                imx_highbeamData = false;
-            }
-        }
-        // ---- [UART_TX[0] bit 6]LowBeam ----
-        {
-            if((imx_teltaleData & 0x02 ) != 0)
-            {
-                imx_lowbeamData = true;   }   else        {
-                imx_lowbeamData = false;
-            }
-        }
-        // ---- [UART_TX[0] bit 7]ParkingAlert ----
-        {
-            if((imx_teltaleData & 0x01 ) != 0)
-            {
-                imx_parkingalertData = true; }   else    {
-                imx_parkingalertData = false;
-            }
-        }
         emit imx_teltales(imx_ridemodeData, imx_warningLowbatteryData, imx_warningSidestandData,
                           imx_rightIndicatorData, imx_leftIndicatorData, imx_highbeamData,
                           imx_lowbeamData, imx_parkingalertData);

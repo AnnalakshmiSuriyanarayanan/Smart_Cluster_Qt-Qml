@@ -23,7 +23,7 @@ Rectangle   {
             {
                 id: gradientstop_1
                 position: 0.0
-                color: gradient_Background // [1] Variable Color Value
+                color: s_FF000000 // [1] Variable Color Value
             }
             GradientStop
             {

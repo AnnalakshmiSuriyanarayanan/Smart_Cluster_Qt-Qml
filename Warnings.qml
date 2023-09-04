@@ -7,6 +7,6 @@ Row
 {
     anchors.top: parent.top
     spacing: window.width/100
-    SideStand{}
-    LowBattery{}
+    SideStand{x: 210;y: 160}
+    LowBattery{visible: false}
 }
