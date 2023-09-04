@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_362" data-name="Rectangle 362" width="19.5" height="25" transform="translate(862.5 11417)" fill="none" stroke="#004654" stroke-width="2"/>
+    </clipPath>
+  </defs>
+  <g id="Navigation" transform="translate(-25 -221.5)">
+    <rect id="Option_icons" width="40" height="40" transform="translate(25 221.5)" fill="#004654" opacity="0"/>
+    <g id="Group_519" data-name="Group 519" transform="translate(-817 -11187.5)">
+      <g id="Rectangle_358" data-name="Rectangle 358" transform="translate(842 11417)" fill="none" stroke="#004654" stroke-width="2">
+        <rect width="19.5" height="25" stroke="none"/>
+        <rect x="1" y="1" width="17.5" height="23" fill="none"/>
+      </g>
+      <g id="Rectangle_359" data-name="Rectangle 359" transform="translate(862.5 11417)" fill="none" stroke="#004654" stroke-width="2">
+        <rect width="19.5" height="25" stroke="none"/>
+        <rect x="1" y="1" width="17.5" height="23" fill="none"/>
+      </g>
+      <g id="Rectangle_360" data-name="Rectangle 360" transform="translate(848 11423)" fill="none" stroke="#004654" stroke-width="2">
+        <rect width="7.5" height="13" rx="3.75" stroke="none"/>
+        <rect x="1" y="1" width="5.5" height="11" rx="2.75" fill="none"/>
+      </g>
+      <g id="Mask_Group_2" data-name="Mask Group 2" clip-path="url(#clip-path)">
+        <g id="Rectangle_361" data-name="Rectangle 361" transform="translate(868.5 11414)" fill="none" stroke="#004654" stroke-width="2">
+          <rect width="7.5" height="13" rx="3.75" stroke="none"/>
+          <rect x="1" y="1" width="5.5" height="11" rx="2.75" fill="none"/>
+        </g>
+        <line id="Line_1" data-name="Line 1" y2="11" transform="translate(873.5 11432.5)" fill="none" stroke="#004654" stroke-width="2"/>
+        <line id="Line_2" data-name="Line 2" x1="4" transform="translate(870.836 11436.414) rotate(-45)" fill="none" stroke="#004654" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Action_Icons" width="40" height="40" transform="translate(11 217.5)" fill="#004654" opacity="0"/>
+    </clipPath>
+  </defs>
+  <g id="Group_544" data-name="Group 544" transform="translate(-11 -217.5)">
+    <g id="Mask_Group_3" data-name="Mask Group 3" clip-path="url(#clip-path)">
+      <g id="Action" transform="translate(-282 0.5)">
+        <rect id="Action_Icons-2" data-name="Action_Icons" width="40" height="40" transform="translate(289 217)" fill="#004654" opacity="0"/>
+        <path id="Lef_arrow" data-name="Lef arrow" d="M5.392,0,0,5.392,7.108,12.5,0,19.608,5.392,25l12.5-12.5Z" transform="translate(300 225)" fill="#004654"/>
+      </g>
+      <g id="Action-2" data-name="Action" transform="translate(14 217.5)">
+        <rect id="Action_Icons-3" data-name="Action_Icons" width="40" height="40" fill="#004654" opacity="0"/>
+        <path id="Lef_arrow-2" data-name="Lef arrow" d="M12.5,0l5.392,5.392L10.784,12.5l7.108,7.108L12.5,25,0,12.5Z" transform="translate(11.108 8)" fill="#004654"/>
+      </g>
+    </g>
+  </g>
+</svg>

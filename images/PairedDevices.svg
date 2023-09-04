@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Navigation" transform="translate(-25 -217.5)">
+    <rect id="Option_icons" width="40" height="40" transform="translate(25 217.5)" fill="#00839e" opacity="0"/>
+    <g id="Group_455" data-name="Group 455" transform="translate(25.582 218.081)">
+      <rect id="Option_icons-2" data-name="Option_icons" width="38.837" height="38.837" transform="translate(0)" fill="#00839e" opacity="0"/>
+      <g id="Group_451" data-name="Group 451" transform="translate(0 1.021)">
+        <path id="Union_13" data-name="Union 13" d="M24.2,35.944a2.913,2.913,0,0,1,0-4.119l4.688-4.688H2.912a2.913,2.913,0,0,1,0-5.826H35.924a2.913,2.913,0,0,1,2.052,4.98l-.041.041-9.612,9.612a2.913,2.913,0,0,1-4.119,0ZM2.912,15.485A2.913,2.913,0,0,1,.863,10.5L.9,10.464,10.513.853a2.913,2.913,0,1,1,4.119,4.119L9.944,9.661h25.98a2.912,2.912,0,0,1,0,5.825Z" transform="translate(0 0)" fill="#00839e"/>
+      </g>
+    </g>
+  </g>
+</svg>

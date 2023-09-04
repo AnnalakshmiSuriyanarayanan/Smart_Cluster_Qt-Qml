@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40">
+  <g id="Group_335" data-name="Group 335" transform="translate(-24.5 -217)">
+    <rect id="Option_icons" width="40" height="40" transform="translate(25 217)" fill="#004654" opacity="0"/>
+    <g id="Trips" transform="translate(-248.297 223)">
+      <path id="Exclusion_2" data-name="Exclusion 2" d="M4.762,15.621h0C4.714,15.53,0,6.58,0,4.761a4.762,4.762,0,0,1,9.524,0c0,1.248-4.714,10.763-4.762,10.859Zm0-13.809A2.784,2.784,0,1,0,7.545,4.6,2.787,2.787,0,0,0,4.762,1.812Z" transform="translate(303.772)" fill="#004654" stroke="rgba(0,0,0,0)" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="Exclusion_1" data-name="Exclusion 1" d="M7.755,25.442h0C7.677,25.294,0,10.721,0,7.755A7.755,7.755,0,0,1,13.238,2.271a7.7,7.7,0,0,1,2.271,5.484c0,2-7.437,17.046-7.753,17.685Zm0-22.176a4.49,4.49,0,1,0,4.489,4.489A4.495,4.495,0,0,0,7.755,3.265Z" transform="translate(273.297 2.289)" fill="#004654" stroke="rgba(0,0,0,0)" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="Path_101" data-name="Path 101" d="M258.322,74.583,244.535,76.11l-2.993,9.614-9.751.227,2.132-4.354,5.079.227,3.764-7.982,14.6.227Z" transform="translate(50.213 -58.221)" fill="#004654"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Group_334" data-name="Group 334" transform="translate(-25 -157)">
+    <rect id="Option_icons" width="40" height="40" transform="translate(25 157)" fill="#004654" opacity="0"/>
+    <g id="Group_333" data-name="Group 333" transform="translate(-366.178 159)">
+      <path id="Path_103" data-name="Path 103" d="M346.142,134.318H322.51a8.187,8.187,0,1,0,0,16.375h23.632a8.187,8.187,0,0,0,0-16.375ZM323.053,148.57a6.065,6.065,0,1,1,6.065-6.064A6.065,6.065,0,0,1,323.053,148.57Z" transform="translate(76.856 -134.318)" fill="#004654"/>
+      <path id="Path_104" data-name="Path 104" d="M345.9,161.973H322.51a8.189,8.189,0,0,0-8.1,9.42,8.345,8.345,0,0,0,8.336,6.955h23.393a8.19,8.19,0,0,0,8.089-9.421A8.343,8.343,0,0,0,345.9,161.973Zm.923,14.167a6.071,6.071,0,1,1,4.957-4.948A6.072,6.072,0,0,1,346.818,176.14Z" transform="translate(76.856 -142.22)" fill="#004654"/>
+    </g>
+  </g>
+</svg>
