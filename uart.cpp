@@ -13,7 +13,7 @@ bool imx_highbeamData;
 bool imx_lowbeamData;
 bool imx_parkingalertData;
 
-quint8 imx_teltaleData =0;
+quint8 imx_teltaleData;
 quint8 imx_speedData = 0;
 quint8 imx_batteryData=100;
 quint8 imx_tripAbatterydata=0;
@@ -37,7 +37,7 @@ UART::UART(QObject *parent) : QObject{parent}, imx_serial(new QSerialPort(this))
     //imx_serial->setPortName("COM1");      // Set_Comm Ports for Console
     imx_serial->setPortName("ttymxc0");   // Set Comm Ports for Target
     imx_serial->open(QIODevice::ReadWrite); // Device Open Mode
-    imx_serial->setBaudRate(QSerialPort::Baud9600); // Device Baudrate
+    imx_serial->setBaudRate(QSerialPort::Baud115200); // Device Baudrate
     imx_serial->setDataBits(QSerialPort::Data8);    // Device Data Bits
     imx_serial->setParity(QSerialPort::NoParity);   // Device Parity
     imx_serial->setStopBits(QSerialPort::OneStop);  // Device Stop Bits
@@ -74,10 +74,10 @@ void UART::readData() // Private Slot
         imx_teltaleData = message[0];
 
         // ---- [UART_TX[1] VehicleBatteryPercentageData
-        imx_batteryData = message[1];
+        imx_batteryData = message[0];
 
         // ---- [UART_TX[2] VehicleSpeedData
-        imx_speedData = message[2];
+        imx_speedData = message[0];
 
         // ---- [UART_TX[3] TripABatteryPercentageData
         imx_tripAbatterydata = imx_speedData;
@@ -118,7 +118,7 @@ void UART::readData() // Private Slot
         // ---- [UART_TX[26] ButtonEventsData
         imx_BtnEvntdata = imx_speedData;
 
-        setImx_teltaleData(imx_teltaleData);                                // ---- [UART_TX[1] TellTaleData
+//        setImx_teltaleData(imx_teltaleData);                                // ---- [UART_TX[1] TellTaleData
         setImx_batteryData(imx_batteryData);                             // ---- [UART_TX[1] VehicleBatteryPercentageData
         setImx_speedData(imx_speedData);                                 // ---- [UART_TX[2] VehicleSpeedData
         setImx_tripAbatterydata(imx_tripAbatterydata);              // ---- [UART_TX[3] TripABatteryPercentageData
@@ -142,9 +142,8 @@ void UART::connections() // public slot
     {
         imx_teltaleData = getImx_teltaleData();
 
-        emit imx_teltales(imx_ridemodeData, imx_warningLowbatteryData, imx_warningSidestandData,
-                          imx_rightIndicatorData, imx_leftIndicatorData, imx_highbeamData,
-                          imx_lowbeamData, imx_parkingalertData);
+        emit imx_warnings(imx_teltaleData);
+        emit imx_teltales(imx_teltaleData);
     }
     // ---- [UART_TX[1] VehicleBatteryPercentageData
     {

@@ -38,7 +38,7 @@ enum Waring_Signs : quint8 {
         WearSeatBeltDriver,
         WearSeatBeltPassenger,
         ServiceDue,
-        AirbagFailure,
+        AirBagFailure,
         DoorOpenDriver,
         DoorOpenPassenger,
         DoorOpenRearLeft,
@@ -128,10 +128,7 @@ private slots:
 
 signals:
     // ---- [UART_TX[0] TellTaleData
-    void imx_teltales(bool imx_ridemodeData, bool imx_warningLowbatteryData,
-                      bool imx_warningSidestandData, bool imx_rightIndicatorData,
-                      bool imx_leftIndicatorData, bool imx_highbeamData,
-                      bool imx_lowbeamData, bool parkingalertData);
+    void imx_teltales(quint8 imx_teltaleData);
     // ---- [UART_TX[1] VehicleBatteryPercentageData
     void imx_speed(quint8 imx_speedData);
     // ---- [UART_TX[2] VehicleSpeedData
@@ -163,6 +160,9 @@ signals:
     // ---- [UART_TX[26] ButtonEventData
     void imx_btnEvnt(quint8 imx_BtnEvntData);
 
+    // ---- [UART_TX[0] Warnings
+    void imx_warnings(quint8 imx_warningsData);
+
 private:
 
     QSerialPort *imx_serial = nullptr;
@@ -173,7 +173,7 @@ private:
     QString  code = "!";
     int codeSize = sizeof(code);
 
-    quint8 imx_bufferSize = 100;
+    quint8 imx_bufferSize = 15;
     qint64 availableData;
     QByteArray imx_buffer;
     int imx_dataIndex = 0;

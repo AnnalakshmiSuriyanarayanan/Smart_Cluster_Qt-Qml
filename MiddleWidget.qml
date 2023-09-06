@@ -30,8 +30,8 @@ Row
             topPadding: 50
             spacing: window.width / 40
             Speedometer{ x: -250 }
-            Warnings{opacity:1}
-            VehicleBattery{}
+            Warnings{opacity:1;z:4}
+            VehicleBattery{z:2}
         }
     }
 }

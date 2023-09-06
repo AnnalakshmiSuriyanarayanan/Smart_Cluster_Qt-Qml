@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     UART newUart;
     newUart.declareQML();
 
-    qmlRegisterType<UART>("com.MyQMLEnums.uart", 1, 0, "Warnings");
+//    qmlRegisterType<UART>("com.MyQMLEnums.uart", 1, 0, "Warnings");
 
 
     return app.exec();

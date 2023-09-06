@@ -15,7 +15,7 @@ Rectangle   {
     Image {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
-        source: icon_Image
+        source: ""
     }
 }
 

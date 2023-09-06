@@ -151,6 +151,102 @@ Window {
     property string messagesImage: "images/Inbox_notify.svg"
     property string goProCamera_Image: "images/Gopro_notify.svg"
 
+    property string warningsImage_0:"images/IMX_Warnings_Warnings-1.png"
+     property string warningQMLText: switch (warningsMessage) {
+                                     case Uart.BootOpen:
+                                         return "_BootOpen"
+                                     case Uart.BonnetOpen:
+                                         return "BonnetOpen"
+                                     case Uart.FogLightFrontON:
+                                         return "FogLight\nFrontON"
+                                     case Uart.PowerSteeringFailure:
+                                         return "PowerSteering\nFailure"
+                                     case Uart.BrakePadFailure:
+                                         return " BrakePad\nFailure"
+                                     case Uart.CruiseControlON:
+                                         return "CruiseControl\nON"
+                                     case Uart.KeyNotinVehicle:
+                                         return "KeyNotIn\nVehicle"
+                                     case Uart.HighBeamON:
+                                         return "HighBeamON"
+                                     case Uart.TyrePressureLowFrontLeft:
+                                         return "TyrePressure\nLowFrontLeft"
+                                     case Uart.TyrePressureLowFrontRight:
+                                         return "TyrePressure\nLowFrontRight"
+                                     case Uart.TyrePressureLowRearLeft:
+                                         return "TyrePressure\nLowRearLeft"
+                                     case Uart.TyrePressureLowRearRight:
+                                         return "TyrePressure\nLowRearRight"
+                                     case Uart.ExteriorLightFault:
+                                         return "ExteriorLight\nFailure"
+                                     case Uart.WearSeatBeltDriver:
+                                         return "WearSeatbelt\nDriver"
+                                     case Uart.WearSeatBeltPassenger:
+                                         return "WearSeatBelt\nPassenger"
+                                     case Uart.ServiceDue:
+                                         return "ServiceDue"
+                                     case Uart.AirBagFailure:
+                                         return "AirBagFailure"
+                                     case Uart.DoorOpenDriver:
+                                         return "DoorOpen\nDriver"
+                                     case Uart.DoorOpenPassenger:
+                                         return "DoorOpen\nPassenger"
+                                     case Uart.DoorOpenRearLeft:
+                                         return "DoorOpen\nRearLeft"
+                                     case Uart.DoorOpenRearRight:
+                                         return "DoorOpen\nRearRight"
+
+                                     default:
+                                         return ""
+                                     }
+
+    property string warningQMLList:         switch (warningsMessage) {
+                                            case Uart.BootOpen:
+                                                return "BootOpen"
+                                            case Uart.BonnetOpen:
+                                                return "BonnetOpen"
+                                            case Uart.FogLightFrontON:
+                                                return "FogLightFrontON"
+                                            case Uart.PowerSteeringFailure:
+                                                return "PowerSteeringFailure"
+                                            case Uart.BrakePadFailure:
+                                                return "BrakePadFailure"
+                                            case Uart.CruiseControlON:
+                                                return "CruiseControlON"
+                                            case Uart.KeyNotinVehicle:
+                                                return "KeyNotInVehicle"
+                                            case Uart.HighBeamON:
+                                                return "HighBeamON"
+                                            case Uart.TyrePressureLowFrontLeft:
+                                                return "TyrePressureLowFrontLeft"
+                                            case Uart.TyrePressureLowFrontRight:
+                                                return "TyrePressureLowFrontRight"
+                                            case Uart.TyrePressureLowRearLeft:
+                                                return "TyrePressureLowRearLeft"
+                                            case Uart.TyrePressureLowRearRight:
+                                                return "TyrePressureLowRearRight"
+                                            case Uart.ExteriorLightFault:
+                                                return "ExteriorLightFailure"
+                                            case Uart.WearSeatBeltDriver:
+                                                return "WearSeatbeltDriver"
+                                            case Uart.WearSeatBeltPassenger:
+                                                return "WearSeatBeltPassenger"
+                                            case Uart.ServiceDue:
+                                                return "ServiceDue"
+                                            case Uart.AirBagFailure:
+                                                return "AirBagFailure"
+                                            case Uart.DoorOpenDriver:
+                                                return "DoorOpenDriver"
+                                            case Uart.DoorOpenPassenger:
+                                                return "DoorOpenPassenger"
+                                            case Uart.DoorOpenRearLeft:
+                                                return "DoorOpenRearLeft"
+                                            case Uart.DoorOpenRearRight:
+                                                return "DoorOpenRearRight"
+
+                                            default:
+                                                return Uart.NoWarnings
+                                            }
 
 
     //-------------------------------------------------------------------------
@@ -321,6 +417,7 @@ Window {
     property int button_Data: uart.connections()
     //-------------------------------------------------------------------------
     property string vehicleRestRangeData: uart.connections()
+    property int warningsMessage: uart.connections()
     //-------------------------------------------------------------------------
 
     Uart
@@ -328,54 +425,11 @@ Window {
         id: uart
         // ---- [UART_TX[0] TellTaleData
         onImx_teltales: {
-            // IMX_RideMode_Data
-            if(imx_ridemodeData == 1) {
-                rideModeBG_color = s_FFFFE2E2
-                rideMode_Icon = ridemode_Turbo
-                rideMode_Text = turbo
-            } else {
-                rideModeBG_color = s_FFE2FFE2
-                rideMode_Icon = ridemode_Eco
-                rideMode_Text = eco
-            }
-            // IMX_Warning_LowBattery_data
-            if(imx_warningLowbatteryData == 1) {
-                warningLowbattery_Opacity = 1
-            } else {
-                warningLowbattery_Opacity = 0
-            }
-            // IMX_Warning_SideStand_data
-            if(imx_warningSidestandData == 1) {
-                warningSideStand_Opacity = 1
-            } else {
-                warningSideStand_Opacity = 0
-            }
-            // IMX_leftIndicator_Data
-            if(imx_leftIndicatorData == 1) {
-                leftIndicator_Opacity = 1
-            } else {
-                leftIndicator_Opacity = 0
-            }
-            //IMX_rightIndicator_Data
-            if(imx_rightIndicatorData == 1) {
-                rightIndicator_Opacity = 1
-            } else {
-                rightIndicator_Opacity = 0
-            }
-            // IMX_high_beam_data & Lowbeam Data
-            if(imx_highbeamData == 1) {
-                icon_Image = high_beam_Image
-            } else if(imx_lowbeamData == 1) {
-                icon_Image = low_beam_Image
-            } else {
-                icon_Image = logo_Image
-            }
-            // IMX_Parking_Alerts_data
-            if(parkingalertData == 1)   {
-                rightIndicator_Opacity = 1
-                leftIndicator_Opacity = 1
-            }
+            warningsMessage = imx_teltaleData
+            console.log(warningsMessage)
         }
+
+
         // ---- [UART_TX[1] VehicleBatteryPercentageData
         onImx_battery:  {
             vehicle_battery_level = imx_batteryData;
